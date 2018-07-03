@@ -17,7 +17,7 @@ module.exports = ({ schemaDir, resolverDir, middlewares }) => {
       (filename) => fs.readFileSync(filename).toString()
     )),
     resolvers: merge(
-      ...map(glob.sync(path.join(resolverDir, '**/*.js'), require))
+      ...map(glob.sync(path.join(resolverDir, '**/*.js')), require)
     )
   });
 
