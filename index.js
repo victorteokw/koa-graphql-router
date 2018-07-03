@@ -21,7 +21,9 @@ module.exports = ({ schemaDir, resolverDir, middlewares }) => {
     )
   });
 
-  applyMiddleware(schema, ...middlewares);
+  if (middlewares && middlewares.length) {
+    applyMiddleware(schema, ...middlewares);
+  }
 
   const handle = (ctx, next) => graphqlKoa({ schema, context: ctx })(ctx, next);
 

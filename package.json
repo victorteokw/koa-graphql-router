@@ -1,6 +1,6 @@
 {
   "name": "koa-graphql-router",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Load graphQL schemas, resolvers and resolver middlewares.",
   "main": "index.js",
   "dependencies": {
