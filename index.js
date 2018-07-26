@@ -29,8 +29,8 @@ module.exports = ({ schemaDir, resolverDir, middlewares }) => {
   const handle = (ctx, next) => graphqlKoa({ schema, context: ctx })(ctx, next);
 
   const router = Router();
-  router.post('/graphql', handle);
-  router.get('/graphql', handle);
+  router.post('/graphql', apolloUploadKoa(), handle);
+  router.get('/graphql', apolloUploadKoa(), handle);
   router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
 
   return router;
